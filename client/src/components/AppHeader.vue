@@ -11,6 +11,10 @@
           <el-icon><HomeFilled /></el-icon>
           <span>首页</span>
         </router-link>
+        <router-link to="/pieces" class="nav-item" :class="{ active: $route.name === 'PieceSquare' || $route.name === 'PieceDetail' }">
+          <el-icon><Headset /></el-icon>
+          <span>曲目广场</span>
+        </router-link>
         <router-link to="/instruments" class="nav-item" :class="{ active: $route.name === 'Instruments' }">
           <el-icon><Goods /></el-icon>
           <span>乐器市场</span>

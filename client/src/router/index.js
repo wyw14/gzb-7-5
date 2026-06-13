@@ -57,6 +57,24 @@ const routes = [
     meta: { title: '个人中心', requiresAuth: true }
   },
   {
+    path: '/pieces',
+    name: 'PieceSquare',
+    component: () => import('../views/PieceSquare.vue'),
+    meta: { title: '曲目广场' }
+  },
+  {
+    path: '/pieces/publish',
+    name: 'PublishPiece',
+    component: () => import('../views/PublishPiece.vue'),
+    meta: { title: '发布练习曲目', requiresAuth: true }
+  },
+  {
+    path: '/pieces/:id',
+    name: 'PieceDetail',
+    component: () => import('../views/PieceDetail.vue'),
+    meta: { title: '曲目详情' }
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),

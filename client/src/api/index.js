@@ -68,4 +68,12 @@ export const recommendApi = {
   pieces: (userId) => api.get(`/recommendations/pieces/${userId}`)
 }
 
+export const pieceApi = {
+  list: (params) => api.get('/pieces', { params }),
+  get: (id) => api.get(`/pieces/${id}`),
+  create: (data) => api.post('/pieces', data),
+  update: (id, data) => api.put(`/pieces/${id}`, data),
+  remove: (id) => api.delete(`/pieces/${id}`)
+}
+
 export default api
