@@ -79,8 +79,8 @@ router.post('/', (req, res) => {
 
   const { title, composer, instrument, difficulty, style, painPoints, lookingFor, progress } = req.body;
 
-  if (!title || !instrument || !difficulty || !style) {
-    return res.status(400).json({ error: '请填写完整信息' });
+  if (!title || !instrument || !difficulty || !style || !painPoints || !lookingFor) {
+    return res.status(400).json({ error: '请填写完整信息（曲目名称、乐器、难度、风格、练习痛点、想找谁一起练均为必填）' });
   }
 
   const newPiece = {
@@ -91,8 +91,8 @@ router.post('/', (req, res) => {
     instrument,
     difficulty,
     style,
-    painPoints: painPoints || '',
-    lookingFor: lookingFor || '',
+    painPoints,
+    lookingFor,
     practiceDays: 1,
     progress: progress || 0,
     createdAt: new Date().toISOString()

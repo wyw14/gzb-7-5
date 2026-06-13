@@ -77,7 +77,7 @@
                 <el-slider v-model="form.progress" :min="0" :max="100" :step="5" show-input />
               </el-form-item>
             </div>
-            <el-form-item label="练习痛点" prop="painPoints">
+            <el-form-item label="练习痛点 *" prop="painPoints">
               <el-input
                 v-model="form.painPoints"
                 type="textarea"
@@ -85,7 +85,7 @@
                 placeholder="描述一下你在练习中遇到的困难，比如：大横按转换不流畅、轮指不够均匀、气息控制不好等"
               />
             </el-form-item>
-            <el-form-item label="想找谁一起练" prop="lookingFor">
+            <el-form-item label="想找谁一起练 *" prop="lookingFor">
               <el-input
                 v-model="form.lookingFor"
                 type="textarea"
@@ -138,7 +138,9 @@ const rules = {
   title: [{ required: true, message: '请输入曲目名称', trigger: 'blur' }],
   instrument: [{ required: true, message: '请选择乐器', trigger: 'change' }],
   difficulty: [{ required: true, message: '请选择难度', trigger: 'change' }],
-  style: [{ required: true, message: '请选择风格', trigger: 'change' }]
+  style: [{ required: true, message: '请选择风格', trigger: 'change' }],
+  painPoints: [{ required: true, message: '请填写练习痛点', trigger: 'blur' }],
+  lookingFor: [{ required: true, message: '请填写想找谁一起练', trigger: 'blur' }]
 }
 
 const goBack = () => {
